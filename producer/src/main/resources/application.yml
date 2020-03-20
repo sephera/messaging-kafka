@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          binder: local_kafka
+          destination: queue.messaging.person
+          group: testing
+          content-type: text/plain
+      binders:
+        local_kafka:
+          type: kafka
+
+

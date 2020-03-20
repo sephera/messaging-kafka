@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: queue.stream.person
+          binders: local_kafka
+          group: testing

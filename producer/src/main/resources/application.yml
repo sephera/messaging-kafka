@@ -1,14 +1,22 @@
 spring:
   cloud:
     stream:
+      binders:
+        local_kafka:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: localhost:29092
+                      zkNodes: localhost:2181
       bindings:
         output:
           binder: local_kafka
           destination: queue.messaging.person
           group: testing
-          content-type: text/plain
-      binders:
-        local_kafka:
-          type: kafka
+          content-type: application/json
 
 

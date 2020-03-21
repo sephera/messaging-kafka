@@ -20,14 +20,14 @@ public class StreamConsumerApplication {
     }
 
     @StreamListener(Sink.INPUT)
-    public void consumeEmployeeDetails(Person person) {
-        log.info("Let's process employee details: {}", person);
+    public void consumeEmployeeDetails(PersonEvent personEvent) {
+        log.info("Let's process employee details: {}", personEvent);
     }
 }
 
 
 @Data
 @AllArgsConstructor
-class Person {
+class PersonEvent {
     private String name;
 }

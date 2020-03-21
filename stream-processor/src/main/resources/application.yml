@@ -15,8 +15,12 @@ spring:
       bindings:
         input:
           binder: local_kafka
+          destination: queue.messaging.name
+          group: testing
+          content-type: text/plain
+        output:
+          binder: local_kafka
           destination: queue.messaging.person
           group: testing
           content-type: application/json
-
 

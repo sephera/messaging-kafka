@@ -13,10 +13,11 @@ spring:
                       brokers: localhost:29092
                       zkNodes: localhost:2181
       bindings:
-        input:
+        output:
           binder: local_kafka
-          destination: queue.messaging.person
+          destination: queue.messaging.name
           group: testing
-          content-type: application/json
+          content-type: text/plain
+
 
 
